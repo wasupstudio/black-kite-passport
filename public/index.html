@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="黑鳶國護照｜帶著一本護照，重新入境基隆。自 10/26 起至 4/10，於見書店每月限量開放領取。" />
+  <title>黑鳶國護照｜帶著一本護照，重新入境基隆</title>
+  <style>
+    :root {
+      --bg: #f5f1e8;
+      --paper: #fffaf0;
+      --text: #2f2a24;
+      --subtext: #5f574f;
+      --accent: #6d4c41;
+      --accent-dark: #4d342d;
+      --accent-2: #9a6d5a;
+      --card: rgba(255, 255, 255, 0.84);
+      --card-solid: #fffdf8;
+      --line: rgba(80, 65, 55, 0.16);
+      --shadow: 0 18px 45px rgba(50, 38, 30, 0.10);
+      --radius: 22px;
+      --max: 1120px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", system-ui, sans-serif;
+      color: var(--text);
+      line-height: 1.8;
+      background: var(--bg);
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      background:
+        linear-gradient(180deg, rgba(245, 241, 232, 0.18), rgba(245, 241, 232, 0.76) 72%, rgba(245, 241, 232, 1)),
+        url("images/hero.png") center center / cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 56px 24px 96px;
+      overflow: hidden;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 130px;
+      background: linear-gradient(0deg, var(--bg), rgba(245,241,232,0));
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      width: 100%;
+      max-width: var(--max);
+      display: flex;
+      justify-content: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-card {
+      width: 100%;
+      max-width: 780px;
+      background: rgba(255, 255, 255, 0.78);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.62);
+      border-radius: 32px;
+      padding: 46px 36px;
+      box-shadow: var(--shadow);
+      text-align: center;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      padding: 6px 14px;
+      border-radius: 999px;
+      background: rgba(109, 76, 65, 0.10);
+      color: var(--accent);
+      font-size: 14px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      margin: 0 0 14px;
+      font-size: clamp(40px, 7vw, 76px);
+      line-height: 1.12;
+      letter-spacing: 0.04em;
+      font-weight: 900;
+    }
+
+    .hero h2 {
+      margin: 0 0 18px;
+      font-size: clamp(19px, 2.5vw, 30px);
+      font-weight: 700;
+      color: var(--subtext);
+    }
+
+    .hero p {
+      margin: 0 auto 24px;
+      max-width: 640px;
+      color: var(--subtext);
+      font-size: 17px;
+    }
+
+    .hero-actions {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 22px;
+      border-radius: 999px;
+      font-weight: 800;
+      transition: 0.2s ease;
+      font-size: 15px;
+    }
+
+    .btn-primary { background: var(--accent); color: #fff; }
+    .btn-primary:hover { transform: translateY(-2px); background: var(--accent-dark); }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.92);
+      border: 1px solid var(--line);
+      color: var(--text);
+    }
+    .btn-secondary:hover { transform: translateY(-2px); background: #fff; }
+
+    .section { padding: 82px 24px; }
+    .section.alt { background: rgba(255,255,255,0.32); }
+
+    .container { width: 100%; max-width: var(--max); margin: 0 auto; }
+
+    .section-title {
+      margin: 0 0 12px;
+      font-size: clamp(28px, 4vw, 44px);
+      line-height: 1.25;
+      letter-spacing: 0.02em;
+    }
+
+    .section-desc { margin: 0 0 34px; color: var(--subtext); max-width: 780px; }
+
+    .grid-2 { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 24px; align-items: start; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 25px;
+      box-shadow: var(--shadow);
+    }
+
+    .card h3 { margin: 0 0 12px; font-size: 22px; }
+    .card p { margin: 0; color: var(--subtext); }
+
+    .timeline { display: grid; gap: 16px; }
+    .timeline-item {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 20px 22px;
+      box-shadow: var(--shadow);
+    }
+    .timeline-item strong {
+      color: var(--accent);
+      display: block;
+      margin-bottom: 6px;
+      font-size: 15px;
+      letter-spacing: 0.04em;
+    }
+
+    .steps { display: grid; gap: 16px; }
+    .step {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 20px 22px;
+      box-shadow: var(--shadow);
+    }
+
+    .step-num {
+      flex: 0 0 40px;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(109, 76, 65, 0.12);
+      color: var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+    }
+
+    .step-content h4 { margin: 0 0 6px; font-size: 20px; }
+    .step-content p { margin: 0; color: var(--subtext); }
+
+    ul.clean { margin: 0; padding-left: 1.2em; color: var(--subtext); }
+
+    .note {
+      font-size: 14px;
+      color: var(--subtext);
+      margin-top: 12px;
+    }
+
+    .cta { text-align: center; }
+    .cta .card { padding: 44px 28px; background: var(--card-solid); }
+    .cta p { max-width: 780px; margin: 0 auto 22px; color: var(--subtext); }
+
+    footer {
+      padding: 30px 24px 50px;
+      text-align: center;
+      color: var(--subtext);
+      font-size: 14px;
+    }
+
+    @media (max-width: 960px) {
+      .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+      .hero-card { padding: 34px 22px; }
+      .section { padding: 62px 18px; }
+    }
+
+    @media print {
+      .hero { min-height: auto; padding: 48px 24px; }
+      .btn { display: none; }
+      .card, .timeline-item, .step { box-shadow: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <section class="hero" id="top">
+    <div class="hero-inner">
+      <div class="hero-card">
+        <div class="eyebrow">Black Kite Passport</div>
+        <h1>黑鳶國護照</h1>
+        <h2>帶著一本護照，重新入境基隆</h2>
+        <p>
+          如果基隆是一個國家，你會怎麼認識它？<br>
+          從港邊吹來的風、騎樓與樓梯、巷弄與廟口，直到抬頭看見黑鳶盤旋的那一刻開始。
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#pickup">查看領取方式</a>
+          <a class="btn btn-secondary" href="#how">查看使用方式</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="about">
+    <div class="container">
+      <h2 class="section-title">這是一本什麼樣的護照？</h2>
+      <p class="section-desc">
+        「黑鳶國護照」是一份以基隆國門港城為主題的城市探索護照。
+        我們邀請你帶著它走進基隆市區，透過實體護照、手機任務與 NFC 感應，
+        解鎖地方故事、城市觀察與限定任務。這不是傳統導覽，而是一場可以依照自己步調進行的城市探索。
+      </p>
+
+      <div class="grid-3">
+        <div class="card">
+          <h3>地方故事</h3>
+          <p>從港口、街區、天空與日常生活中，重新看見基隆的層次與記憶。</p>
+        </div>
+        <div class="card">
+          <h3>自由探索</h3>
+          <p>不需要跟團、不必一次跑完，依照自己的節奏慢慢入境這座城市。</p>
+        </div>
+        <div class="card">
+          <h3>任務體驗</h3>
+          <p>透過手機頁面與 NFC 感應，完成一個個只屬於基隆的探索任務。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt" id="pickup">
+    <div class="container">
+      <div class="grid-2">
+        <div>
+          <h2 class="section-title">開放領取時間</h2>
+          <p class="section-desc">
+            黑鳶國護照自 <strong>10/26</strong> 起開放領取，並持續至 <strong>4/10</strong>。
+            每月固定開放，數量有限，領完為止。
+          </p>
+
+          <div class="timeline">
+            <div class="timeline-item">
+              <strong>領取地點</strong>
+              見書店
+            </div>
+            <div class="timeline-item">
+              <strong>開放方式</strong>
+              每月 1 日下午 1 點開放領取
+            </div>
+            <div class="timeline-item">
+              <strong>每月數量</strong>
+              限量 30 本，領完為止
+            </div>
+            <div class="timeline-item">
+              <strong>提醒</strong>
+              每月開放時間與剩餘數量，請以阿普蛙工作室粉絲頁最新消息為準
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>領取前先知道</h3>
+          <ul class="clean">
+            <li>護照為限量發放，每月數量有限。</li>
+            <li>請於見書店開放時段內前往領取。</li>
+            <li>若當月名額已滿，請留意下個月開放消息。</li>
+            <li>護照為原型測試版本，內容將持續調整與成長。</li>
+          </ul>
+          <p class="note">小提醒：10/26 首日開放活動如另有特殊規則，請以最新公告為準。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="how">
+    <div class="container">
+      <h2 class="section-title">護照怎麼使用？</h2>
+      <p class="section-desc">
+        從領取護照到完成任務，整個過程不複雜。只要帶著一點好奇心，就可以開始你的港城探索。
+      </p>
+
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-content">
+            <h4>到見書店領取黑鳶國護照</h4>
+            <p>先到見書店領取你的護照。護照數量有限，每月限量開放，建議留意最新公告。</p>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-content">
+            <h4>打開護照，前往指定探索點</h4>
+            <p>護照中會引導你前往基隆市區中的特定地點。可能是書店、文化空間、港邊場域、街區角落，也可能是你平常經過卻不曾停下來看的地方。</p>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-content">
+            <h4>感應 NFC</h4>
+            <p>在部分地點，你可以透過 NFC 感應，開啟手機上的任務頁面。任務可能包含地方故事、觀察提示、探索挑戰，或需要你親自完成的小任務。</p>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-num">4</div>
+          <div class="step-content">
+            <h4>完成任務，收集你的港城記憶</h4>
+            <p>黑鳶國護照不是只為了集章。我們希望它能帶你看見基隆的另一種樣子：港口的歷史、街區的日常、城市的邊角、天空中的黑鳶，以及人與地方之間的關係。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt" id="who">
+    <div class="container">
+      <h2 class="section-title">這本護照適合誰？</h2>
+      <div class="grid-4">
+        <div class="card">
+          <h3>第一次來基隆的人</h3>
+          <p>如果你對基隆還不熟，這本護照可以成為你的第一位引路人。</p>
+        </div>
+        <div class="card">
+          <h3>想重新認識城市的基隆人</h3>
+          <p>住在基隆，也可能重新發現這座城市還有很多你沒細看的地方。</p>
+        </div>
+        <div class="card">
+          <h3>喜歡走路與觀察的人</h3>
+          <p>適合喜歡街區散步、探索地方細節、慢慢感受城市的人。</p>
+        </div>
+        <div class="card">
+          <h3>對地方文化有興趣的人</h3>
+          <p>不需要熟悉文史背景，只要願意靠近，就能開始入境。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="notice">
+    <div class="container">
+      <div class="grid-2">
+        <div class="card">
+          <h3>請注意</h3>
+          <ul class="clean">
+            <li>黑鳶國護照為限量發放，每月數量有限，領完為止。</li>
+            <li>部分任務需要使用手機開啟網頁與感應 NFC。</li>
+            <li>請尊重各合作據點營業時間與現場規範。</li>
+            <li>走讀過程中請注意交通安全。</li>
+            <li>也請對地方居民、店家與環境保持尊重。</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>黑鳶國正在建國中</h3>
+          <p>
+            這是一份正在慢慢長大的護照。
+            我們希望透過這次原型測試，持續蒐集大家的使用經驗與回饋，
+            讓未來的黑鳶國護照能串起更多地方故事、合作據點與城市任務。
+          </p>
+          <p style="margin-top:12px;">
+            如果你在探索過程中有任何發現、想法或建議，
+            歡迎透過護照中的回饋連結告訴我們。
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section cta" id="end">
+    <div class="container">
+      <div class="card">
+        <h2 class="section-title">帶著護照，走進基隆</h2>
+        <p>
+          也許你會發現，這座城市比你想像中更像一個國家。
+          下一次來到基隆，不妨換一種方式入境。
+        </p>
+        <a class="btn btn-primary" href="#top">回到頁首</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    指導單位｜文化部<br>
+    補助單位｜國立新竹生活美學館<br>
+    執行單位｜阿普蛙工作室
+  </footer>
+
+</body>
+</html>
