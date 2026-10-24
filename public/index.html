@@ -231,6 +231,27 @@
 
     .step-content h4 { margin: 0 0 6px; font-size: 20px; }
     .step-content p { margin: 0; color: var(--subtext); }
+    .step-content p + p,
+    .step-content p + .step-callout,
+    .step-content .step-callout + p { margin-top: 12px; }
+
+    /* 步驟裡的提醒框：放需要特別注意的連結與說明。 */
+    .step-callout {
+      padding: 12px 16px;
+      border-radius: 12px;
+      background: rgba(109, 76, 65, 0.06);
+      border-left: 3px solid var(--accent-2);
+    }
+    .step-callout p + p { margin-top: 4px; }
+
+    .step-link {
+      color: var(--accent);
+      font-weight: 700;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      word-break: break-all;
+    }
+    .step-link:hover { color: var(--accent-dark); }
 
     ul.clean { margin: 0; padding-left: 1.2em; color: var(--subtext); }
 
@@ -369,13 +390,24 @@
           <div class="step-content">
             <h4>到見書店領取黑鳶國護照</h4>
             <p>先到見書店領取你的護照。護照數量有限，每月限量開放，建議留意最新公告。</p>
+            <div class="step-callout">
+              <p>領取護照後請記得加入 LINE 官方帳號：</p>
+              <p><a class="step-link" href="https://lin.ee/xp4ndoR" target="_blank" rel="noopener">https://lin.ee/xp4ndoR</a></p>
+              <p>遊戲中的故障排除以及即時更新都在這裡唷！</p>
+            </div>
           </div>
         </div>
 
         <div class="step">
           <div class="step-num">2</div>
           <div class="step-content">
-            <h4>打開護照，前往指定探索點</h4>
+            <h4>打開護照，輸入驗證碼，前往指定探索點</h4>
+            <p>護照中包含了驗證碼與 NFC 晶片，兩者皆為唯一且與你綁定，所以請妥善保管。</p>
+            <div class="step-callout">
+              <p>拿到護照後請到這裡輸入你的驗證碼：</p>
+              <p><a class="step-link" href="https://liff.line.me/2012124999-mSM9yA9K" target="_blank" rel="noopener">https://liff.line.me/2012124999-mSM9yA9K</a></p>
+              <p>如果成功登入，即表示完成護照綁定，如有問題請使用 <a class="step-link" href="https://lin.ee/xp4ndoR" target="_blank" rel="noopener">LINE 官方帳號</a>與我們聯絡。</p>
+            </div>
             <p>護照中會引導你前往基隆市區中的特定地點。可能是書店、文化空間、港邊場域、街區角落，也可能是你平常經過卻不曾停下來看的地方。</p>
           </div>
         </div>
