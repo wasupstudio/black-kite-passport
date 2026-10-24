@@ -116,12 +116,28 @@
       font-size: 17px;
     }
 
+    /* 四顆按鈕排成 2×2：上排是頁內說明，下排是 LINE 相關連結，寬度一致。 */
     .hero-actions {
-      display: flex;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 220px));
       justify-content: center;
-      gap: 14px;
-      flex-wrap: wrap;
-      margin-top: 20px;
+      gap: 12px 14px;
+      margin-top: 24px;
+    }
+
+    .hero-actions .btn { text-align: center; }
+
+    /* 開新頁面的按鈕，文字後面加一個小箭頭提示。 */
+    .btn-external::after {
+      content: "↗";
+      margin-left: 6px;
+      font-size: 0.9em;
+      opacity: 0.6;
+    }
+
+    /* 手機上改成一排一顆，避免文字被擠成兩行。 */
+    @media (max-width: 560px) {
+      .hero-actions { grid-template-columns: minmax(0, 320px); }
     }
 
     .btn {
@@ -263,6 +279,8 @@
         <div class="hero-actions">
           <a class="btn btn-primary" href="#pickup">查看領取方式</a>
           <a class="btn btn-secondary" href="#how">查看使用方式</a>
+          <a class="btn btn-secondary btn-external" href="https://lin.ee/xp4ndoR" target="_blank" rel="noopener">LINE 官方帳號</a>
+          <a class="btn btn-secondary btn-external" href="https://liff.line.me/2012124999-mSM9yA9K" target="_blank" rel="noopener">玩家登入頁面</a>
         </div>
       </div>
     </div>
